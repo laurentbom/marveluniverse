@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Marvel</title>
+    <link rel="stylesheet" href="css/styles.min.css">
+    
+</head>
+
+<body id="app">
+    <!-- Header -->
+    <header class="header">
+        <nav>
+            <div class="nav__logo"><img src="img/logo.png" alt=""></div>
+            <div>
+                <input type="text" placeholder="Search" v-model="search" @input="searchForHero">
+                <button>Search</button>
+            </div>
+        </nav>
+    </header>
+    <!-- Main -->
+    <main class="main">
+        <div :class="'results ' + isDetails">
+            <div @click="getHeroDetails(searchResult.id)" v-if="search" v-for="searchResult in searchResults" :key="searchResult.id" class="results__img" :style="'background:url(' + searchResult.images.lg + ') center/cover'">
+                <p>{{searchResult.name}}</p>
+            </div>
+            <div v-else class="noResults">Pas de résultats</div>
+        </div>
+        <div :class="'details ' + isDetails">
+            <div class="details__close" @click="closeDetails">X</div>
+            <div class="details__img" v-if="heroDetails">
+                <img :src="" :alt="">
+            </div>
+            <div class="details__txt" v-if="heroDetails">
+                <p>Name: {{heroDetails.name}}</p>
+                <p>Full name: {{heroDetails}}</p>
+            </div>
+        </div>
+    </main>
+    <!-- Footer -->
+    <footer class="footer"></footer>
+    <!-- Scripts -->
+    <script src="https://kit.fontawesome.com/e6327d8d43.js" crossorigin="anonymous"></script>
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>

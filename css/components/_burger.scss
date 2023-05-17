@@ -1,0 +1,111 @@
+// Burger with span & hover effect
+.burger-menu {
+	cursor: pointer;
+	height: 30px;
+	width: 30px;
+	position: relative;
+	z-index: 2;
+	// THE LINES
+	span,
+	span:before,
+	span:after {
+		background: rgb(0, 0, 0);
+		display: block;
+		height: 2px;
+		width: 80%;
+		opacity: 1;
+		position: absolute;
+		left: 50%;
+		transform: translate(-50%,-50%);
+		transition: 0.3s ease-in-out;
+	}
+	span:before,
+	span:after {
+		content: '';
+		width: 100%;
+	}
+	// TOP
+	span:before {
+		top: 7px;
+		transform: translate(-50%,-50%);
+	}
+	// MIDDLE
+	span{
+		top: 50%;
+		transform: translate(-50%,-50%);
+	}
+	// BOTTOM
+	span:after {
+		top: -5px;
+		transform: translate(-50%,-50%);
+	}
+	// ROTATION ON HOVER (pour le click rajouter une classe et js)
+	&:hover {
+		// TOP
+		span:before {
+			top: 50%;
+			transform: translate(-50%,-50%) rotate(90deg);;
+		}
+		// MIDDLE
+		span {
+			transform: translate(-50%,-50%) rotate(-45deg);
+			top: 50%;
+		}
+		// BOTTOM
+		span:after {
+			top: 50%;
+			left: 0;
+			transform: rotate(90deg);
+			opacity: 0;
+			width: 0;
+		}
+	}
+}
+// Burger Menu with position 
+// .burger-menu{
+//   position: relative;
+//   // Size
+//   height: 40px;
+//   width: 40px;
+//   // Border
+//   // border: 3px solid gray;
+//   box-shadow: inset -3px 0 0 gray, inset 0 -3px 0 gray, inset 3px 0 0 gray, inset 0 3px 0 gray;
+
+//   border-radius: 5px;
+//   cursor: pointer;
+//   div{
+//     position: absolute;
+//     left: 50%;
+//     top: 50%;
+//     transform: translate(-50%,-50%);
+//     // Bar
+//     background-color: gray;
+//     border-radius: 3px;
+//     height: 3px;
+//     width: 60%;
+//   }
+//   .barre-top{
+//     top: 30%;
+//   }
+//   .barre-bottom{
+//     top: 70%;
+//   }
+// }
+
+// Burger Menu with Flex (no border)
+// .burger-menu{
+//   display: flex;
+//   flex-direction: column;
+//   align-items: center;
+//   justify-content: space-evenly;
+//   height: 35px;
+//   width: 40px;
+//   border-radius: 3px;
+//   cursor: pointer;
+//   div{
+//     height: 3px;
+//     width: 70%;
+//     border-radius: 3px;
+//     background-color: gray;
+//   }
+// }
