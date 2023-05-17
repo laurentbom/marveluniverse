@@ -31,11 +31,11 @@
         <div :class="'details ' + isDetails">
             <div class="details__close" @click="closeDetails">X</div>
             <div class="details__img" v-if="heroDetails">
-                <img :src="" :alt="">
+                <img :src="heroDetails.images.lg" :alt="">
             </div>
             <div class="details__txt" v-if="heroDetails">
-                <p>Name: {{heroDetails.name}}</p>
-                <p>Full name: {{heroDetails}}</p>
+                <p><span>Name:</span> {{heroDetails.name}}</p>
+                <p><span>Full name:</span> {{heroDetails.biography.fullName}}</p>
             </div>
         </div>
     </main>

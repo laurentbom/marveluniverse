@@ -93,17 +93,21 @@ nav{
     }
   }
 }
-11h30
+.main{
+  width: 100%;
+}
 .details{
   position: absolute;
   left: 0;
   top: 20vh;
   transform: translateX(100vw);
   overflow: hidden;
-  transition: .4s all ease-out;
-  padding: 100px;
+  transition: .4s all ease-out .3s;
+  padding: 50px;
   display: flex;
-  gap: 100px;
+  gap: 50px;
+  width: 100%;
+  font-size: 22px;
   &.moved{
     transform: translateX(0vw);
   }
@@ -111,6 +115,10 @@ nav{
     display: flex;
     flex-direction: column;
     gap: 10px;
+    span{
+      color: #FF161D;
+      font-style: italic;
+    }
   }
 }
 .noResults{

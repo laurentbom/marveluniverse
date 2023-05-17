@@ -7,7 +7,7 @@ createApp({
       search : "",
       searchResults: "",
       isDetails : "",
-      heroDetails: [],
+      heroDetails: null,
     }
   },
   methods : {
@@ -40,6 +40,7 @@ createApp({
     },
     closeDetails(){
       this.isDetails = "";
+      this.heroDetails = null;
     }
   },
   mounted() {
